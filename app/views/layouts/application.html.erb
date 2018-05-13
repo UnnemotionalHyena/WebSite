@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab6</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="navbar navbar-custom navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Home", root_path, id: "logo", data: { turbolinks: false }  %>
+        <nav>
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if current_page?(pages_skyrim_path) %>">
+              <%= link_to "Skyrim", pages_skyrim_path, data: { turbolinks: false }  %>
+            </li>
+            <li class="<%= 'active' if current_page?(pages_blackflag_path) %>">
+              <%= link_to "Black Flag", pages_blackflag_path, data: { turbolinks: false }  %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <div id="app">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
