@@ -8,6 +8,10 @@ gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3' #group: :development
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
 gem 'rails_12factor', group: :production
 
 # Use Puma as the app server
